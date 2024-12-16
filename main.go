@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
 	"strings"
 
 	"github.com/gotd/td/telegram/message"
@@ -84,7 +85,7 @@ func main() {
 
 		// send uploaded file
 		document := message.UploadedDocument(upload, styling.Plain(text))
-		document.Filename(upload.GetName())
+		document.Filename(filepath.Base(*file))
 		target := sender.Resolve(recipient)
 		if _, err := target.Media(ctx, document); err != nil {
 			return fmt.Errorf("send: %w", err)
