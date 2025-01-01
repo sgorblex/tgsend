@@ -7,7 +7,7 @@ toolchain go1.23.4
 require (
 	github.com/gotd/td v0.116.0
 	golang.org/x/crypto v0.31.0
-	golang.org/x/net v0.32.0
+	golang.org/x/net v0.33.0
 )
 
 require (
