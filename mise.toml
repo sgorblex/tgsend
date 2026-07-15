@@ -1,0 +1,19 @@
+[tools]
+go = "1.23.4"
+
+[tasks.format]
+alias = "fmt"
+description = "Format code with gofmt"
+run = "go fmt"
+
+[tasks.build]
+description = "Build release binary"
+run = "go build -v"
+
+[tasks.clean]
+description = "Clean build artifacts"
+run = "go clean"
+
+[tasks.fix]
+description = "Run checks and fixes"
+depends = ["format"]
